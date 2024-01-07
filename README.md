@@ -83,4 +83,4 @@ Events:
   ----     ------            ----                  ----               -------
   Warning  FailedScheduling  10m (x1547 over 30h)  default-scheduler  0/3 nodes are available: 1 node(s) had taint {node-role.kubernetes.io/master: }, that the pod didn't tolerate, 2 Node is in a different region.
 ```
-We notice that the pod with the us-north label is ina pending state, thus it has not been scheduled.
+We notice that the pod with the us-north label is in a pending state, thus it has not been scheduled.
