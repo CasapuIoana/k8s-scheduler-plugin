@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod-2
+  labels:
+    custom-label: us-north
+spec:
+  schedulerName: default-scheduler
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+  tolerations:
+  - key: "key"
+    operator: "Equal"
+    value: "value"
+    effect: "NoSchedule"
