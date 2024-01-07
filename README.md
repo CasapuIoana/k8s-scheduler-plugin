@@ -6,7 +6,7 @@
 ### Build an image
 
 I’ve already built an image `casapuioana/k8s:region-filter-plugin`. 
-If you want to build your own, run the following command in the terminal above:
+If you want to build your own, run the following command:
 
 ```
 docker build -t casapuioana/k8s:region-filter-plugin ./
