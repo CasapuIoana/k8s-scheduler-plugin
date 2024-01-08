@@ -66,11 +66,11 @@ kubectl logs -n kube-system -l component=kube-scheduler
 And in order to check the result run this
 
 ```
-$ kubectl get pods -o wide --show-labels
-NAME         READY   STATUS    RESTARTS   AGE    LABELS
-nginx        1/1     Running   0          2d7h   <none>
-test-pod-1   1/1     Running   0          30h    custom-label=us-south
-test-pod-2   0/1     Pending   0          30h    custom-label=us-north
+$ kubectl get pods -o custom-columns=NAME:.metadata.name,READY:.status.containerStatuses[*].ready,NODE:.spec.nodeName,LABELS:.metadata.labels
+NAME         READY    NODE               LABELS
+nginx        true     research-worker2   <none>
+test-pod-1   true     research-worker2   map[custom-label:us-south]
+test-pod-2   <none>   <none>             map[custom-label:us-north]
 ```
 
 And if we want to further check the status of the `test-pod-2`
